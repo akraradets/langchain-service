@@ -1,22 +1,24 @@
 [tool.poetry]
-name = "LangServe-template"
-version = "0.1.0"
+name = "langchain-service"
+version = "0.0.1"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = []
 readme = "README.md"
-packages = [
-    { include = "app" },
-]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-uvicorn = "^0.23.2"
-langserve = {extras = ["server"], version = ">=0.0.30"}
-pydantic = "<2"
+python = ">=3.8.1,<4.0"
+langchain-core = ">=0.1.5"
+langchain-openai = ">=0.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
-langchain-cli = ">=0.0.15"
+langchain-cli = ">=0.0.4"
+fastapi = "^0.104.0"
+sse-starlette = "^1.6.5"
+
+[tool.langserve]
+export_module = "langchain_service"
+export_attr = "chain"
 
 [build-system]
 requires = ["poetry-core"]

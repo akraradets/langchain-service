@@ -1,10 +1,15 @@
-# LangServe Template
+# langchain-service
 
-`LangServe` is a framework for deploying a `chain` or an `agent` easily.
-It is built with modularity in mind.
-This modularity enables `LLM` developers to develop a `chain` and an `agent` as a separate package called `LangChain Template`.
+This repository is a template for creating a `LangChain` service.
+The code is generated from `langchain-cli`, documents how to develop the service, and deploys it to the `LangServe` project.
 
-- [LangServe Template](#langserve-template)
+We guess that there are certain rules on how to name the `LangChain template`.
+We tried to create the repository with the name `LangChain-template` but Python does not play nicely with this name (probably because of the name conflict or it tries to refer to `Langchain-template` (`c` and `C`) ).
+
+
+Anyhow, we do suggest you name your package with all lowercases and `-` in between.
+
+- [langchain-service](#langchain-service)
   - [How this is created?](#how-this-is-created)
   - [How to develop](#how-to-develop)
     - [Codespaces](#codespaces)
@@ -17,21 +22,37 @@ This modularity enables `LLM` developers to develop a `chain` and an `agent` as 
 The project is created with `langchain-cli`
 
 ```sh
-langchain app new .
+langchain template new .
 ```
 
 The command will generate these files.
-To install a virtual environment, you run
 
 ```sh
-poetry install
+.
+├── langchain_service/. # All the agent/chain is here
+│   ├── __init__.py
+│   ├── chain.py
+├── tests/              # We will write a test script in here
+│   ├── __init__.py
+├── .gitignore/         # initially, only __pyccache__ is ignored
+├── pyproject.toml/     # package manager with `poetry`
+└── README.md/          # renamed to READMD_fromLangChain.md
 ```
 
-To run the server
+We have to add the package to the editable Python package 
 
 ```sh
-langchain serve
+pip install -e .
 ```
+
+> Or you can add the path to `PYTHON_PATH`... i guess.
+
+To run the package
+
+```sh
+langchain template serve
+```
+
 
 ## How to develop
 

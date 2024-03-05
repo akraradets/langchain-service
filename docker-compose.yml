@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  langserve:
+    image: langserve:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    ports:
+      - 8000:8000
+    env_file:
+      - .env

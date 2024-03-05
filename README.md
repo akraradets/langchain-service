@@ -15,6 +15,7 @@ Anyhow, we do suggest you name your package with all lowercases and `-` in betwe
     - [Codespaces](#codespaces)
     - [Local Development](#local-development)
   - [How to deploy](#how-to-deploy)
+  - [How to test](#how-to-test)
 
 
 ## How this is created?
@@ -110,6 +111,8 @@ LANGCHAIN_TRACING_V2="false"
 LANGCHAIN_API_KEY="<YOUR-API-KEY>"  # Update to your API key
 LANGCHAIN_PROJECT="default"
 LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+OPENAI_API_KEY="<YOUR-API-KEY>"
+OPEN_AI_ORG="<YOUR-API-KEY>" # Optional
 ```
 
 If you need more environment variables, you can add the `.env` file or create another one and append the list to `env_files` in `docker-compose.yml`
@@ -122,3 +125,6 @@ docker compose up -d --build
 
 This will spawn a Docker container that only runs the project (similar to the Production).
 If this works fine, you should be safe to deploy.
+
+## How to test
+

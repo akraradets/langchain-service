@@ -25,28 +25,27 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8  
 ENV LANGUAGE en_US:en  
 
-
-
-
 RUN pip install poetry==1.6.1
 
 RUN poetry config virtualenvs.create false
 
 COPY ./pyproject.toml ./README.md ./poetry.lock* ./
 
-COPY ./package[s] ./packages
+# COPY ./package[s] ./packages
+COPY . .
 
 RUN poetry install  --no-interaction --no-ansi --no-root
 
-COPY ./app ./app
+# COPY ./app ./app
 
-RUN poetry install --no-interaction --no-ansi
+# RUN poetry install --no-interaction --no-ansi
 
-EXPOSE 8080
+EXPOSE 8000
 
+RUN pip install -e .
 
 # Clear apt for optimizing image size
 RUN apt clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD exec uvicorn app.server:app --host 0.0.0.0 --port 8000
+CMD poetry run langchain template serve --host 0.0.0.0 --port 8000

@@ -1,7 +1,7 @@
 version: '3.9'
 services:
-  langserve:
-    image: langserve:latest
+  langchain:
+    image: langchain:latest
     build:
       context: .
       dockerfile: Dockerfile

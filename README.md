@@ -22,7 +22,7 @@ Anyhow, we do suggest you name your package with all lowercases and `-` in betwe
 The project is created with `langchain-cli`
 
 ```sh
-langchain template new .
+$ langchain template new .
 ```
 
 The command will generate these files.
@@ -42,7 +42,7 @@ The command will generate these files.
 We have to add the package to the editable Python package 
 
 ```sh
-pip install -e .
+$ pip install -e .
 ```
 
 > Or you can add the path to `PYTHON_PATH`... i guess.
@@ -50,9 +50,8 @@ pip install -e .
 To run the package
 
 ```sh
-langchain template serve
+$ langchain template serve
 ```
-
 
 ## How to develop
 
@@ -60,20 +59,39 @@ This repository is set as a template.
 You can always create a new repository based on this one easily.
 Or if you want to fork, feel free to do so.
 
-After you spawn the `Dev Container` regardless of using `Codespaces` or `Local Dev Container`, it will install the extension and perform the `poetry install` right away.
-The result of `poetry install` will create the `.venv` folder with nesseary Python package to run the project.
-You can try to run 
-
-```sh
-langchain serve
-``` 
-
-to see if it works.
-
 ### Codespaces
 
 The template is created with `GitHub Codespaces`.
 We recommend you use `Codespaces` to develop.
+
+Once you spawn the `Codespaces`, you have to run
+
+```sh
+$ pip install -e .
+```
+
+This will at ``
+
+```sh
+$ pip list
+...
+langchain-service        0.0.1      /workspaces/langchain-service
+...
+```
+
+From here, you can spawn a web server with
+
+```sh
+$ langchain template serve
+```
+
+Then, all you have to do is to at your `OPENAI_API_KEY` to the environment.
+You can do this by at it to the `.env` file.
+Then run,
+
+```sh
+$ source .env
+```
 
 ### Local Development
 

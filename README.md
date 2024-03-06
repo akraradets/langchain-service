@@ -16,6 +16,8 @@ Anyhow, we do suggest you name your package with all lowercases and `-` in betwe
     - [Local Development](#local-development)
   - [How to deploy](#how-to-deploy)
   - [How to test](#how-to-test)
+    - [Test code](#test-code)
+  - [Test with container (like production)](#test-with-container-like-production)
   - [Resources](#resources)
 
 
@@ -121,7 +123,7 @@ If you need more environment variables, you can add the `.env` file or create an
 To build and run Docker.
 
 ```sh
-docker compose up -d --build
+$ docker compose up -d --build
 ```
 
 This will spawn a Docker container that only runs the project (similar to the Production).
@@ -129,6 +131,24 @@ If this works fine, you should be safe to deploy.
 
 ## How to test
 
+### Test code
+
+Run 
+
+```sh
+$ poetry run pytest --cov=langchain_service/ tests/
+```
+
+## Test with container (like production)
+
+Run
+
+```sh
+$ docker compose build 
+$ docker compose run --rm langchain poetry run pytest --cov=langchain_service/ tests/
+```
+
 ## Resources
-- [LangChain Template](https://github.com/langchain-ai/langchain/blob/master/templates/README.md)
-- [Testing](https://python.langchain.com/docs/contributing/testing)
+- LangChain Template: https://github.com/langchain-ai/langchain/blob/master/templates/README.md
+- Testing: https://python.langchain.com/docs/contributing/testing
+- Best PyTest video: https://www.youtube.com/watch?v=cHYq1MRoyI0

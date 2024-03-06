@@ -26,7 +26,8 @@
 				"ms-azuretools.vscode-docker",
 				"michelemelluso.gitignore",
 				"yzhang.markdown-all-in-one",
-				"znck.grammarly"
+				"znck.grammarly",
+				"Cameron.vscode-pytest"
 			]
 		}
 	},

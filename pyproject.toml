@@ -17,6 +17,12 @@ langchain-cli = ">=0.0.4"
 fastapi = "^0.104.0"
 sse-starlette = "^1.6.5"
 
+[tool.poetry.group.test.dependencies]
+pytest = "^8.0.2"
+pytest-depends = "^1.0.1"
+pytest-cov = "^4.1.0"
+pytest-order = "^1.2.0"
+
 [tool.langserve]
 export_module = "langchain_service"
 export_attr = "chain"

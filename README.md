@@ -16,6 +16,7 @@ Anyhow, we do suggest you name your package with all lowercases and `-` in betwe
     - [Local Development](#local-development)
   - [How to deploy](#how-to-deploy)
   - [How to test](#how-to-test)
+  - [Resources](#resources)
 
 
 ## How this is created?
@@ -128,3 +129,6 @@ If this works fine, you should be safe to deploy.
 
 ## How to test
 
+## Resources
+- [LangChain Template](https://github.com/langchain-ai/langchain/blob/master/templates/README.md)
+- [Testing](https://python.langchain.com/docs/contributing/testing)
